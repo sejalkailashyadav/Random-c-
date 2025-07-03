@@ -664,4 +664,104 @@ public:
 * Time Complexity: **O(n)**
 * Space Complexity: **O(n)**
 
-You're all set to commit this, bro! Let me know when you're ready for the next problem 🔥
+## 383. Ransom Note
+
+### ✅ Problem Summary
+
+Given two strings `ransomNote` and `magazine`, return `true` if `ransomNote` can be constructed by using the letters from `magazine`. Each letter in `magazine` can only be used once.
+
+### 🧪 Examples:
+
+```txt
+Input: ransomNote = "a", magazine = "b"
+Output: false
+
+Input: ransomNote = "aa", magazine = "ab"
+Output: false
+
+Input: ransomNote = "aa", magazine = "aab"
+Output: true
+```
+
+---
+
+### 🔧 Approach: Use `unordered_map<char, int>` to Count Letters
+
+We need to:
+
+1. Count how many times each letter appears in `magazine`
+2. For each letter in `ransomNote`, check if it's available in the map
+3. If not available or used up, return false
+4. Otherwise, use it and keep going
+
+---
+
+### ✅ C++ Code (with Comments)
+
+```cpp
+#include <iostream>
+#include <unordered_map>
+#include <string>
+using namespace std;
+
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        unordered_map<char, int> freq;
+
+        // Step 1: Count letters in magazine
+        for (char c : magazine) {
+            freq[c]++;
+        }
+
+        // Step 2: Check if ransomNote can be built
+        for (char c : ransomNote) {
+            if (freq[c] == 0) {
+                return false; // not enough of this letter
+            }
+            freq[c]--; // use the letter
+        }
+
+        return true; // all letters available
+    }
+};
+```
+
+---
+
+### 🧠 Code Breakdown (Line-by-Line Table)
+
+| Code Line                        | What It Does                                               |
+| -------------------------------- | ---------------------------------------------------------- |
+| `unordered_map<char, int> freq;` | Creates a map to count each letter in `magazine`           |
+| `for (char c : magazine)`        | Loop through `magazine`                                    |
+| `freq[c]++;`                     | Count how many times each letter appears                   |
+| `for (char c : ransomNote)`      | Loop through each letter in `ransomNote`                   |
+| `if (freq[c] == 0)`              | If no more of the letter left, return false                |
+| `freq[c]--;`                     | Use up one instance of the letter                          |
+| `return true;`                   | All letters were available → ransomNote can be constructed |
+
+---
+
+### 🔁 Dry Run: `ransomNote = "aa"`, `magazine = "aab"`
+
+| Step | Character | freq before | freq after | Action             |
+| ---- | --------- | ----------- | ---------- | ------------------ |
+| +    | a         | 0           | 1          | add from magazine  |
+| +    | a         | 1           | 2          | add from magazine  |
+| +    | b         | 0           | 1          | add from magazine  |
+| -    | a         | 2           | 1          | use for ransomNote |
+| -    | a         | 1           | 0          | use for ransomNote |
+
+✅ All letters used successfully → return `true`
+
+---
+
+### 🏁 Final Notes:
+
+* `unordered_map` is perfect for counting frequencies
+* Time Complexity: **O(n + m)**
+* Space Complexity: **O(1)** (only 26 lowercase letters)
+
+
+
