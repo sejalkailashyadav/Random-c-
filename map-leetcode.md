@@ -576,3 +576,92 @@ public:
 * It handles any string order
 * Time Complexity: **O(n)**
 * Space Complexity: **O(1)** (constant characters a-z)
+## 169. Majority Element
+
+### ✅ Problem Summary
+
+Given an array `nums` of size `n`, return the **majority element** — the element that appears **more than ⌊n / 2⌋ times**.
+
+It is guaranteed that a majority element always exists.
+
+### 🧪 Examples:
+
+```txt
+Input: nums = [3,2,3]
+Output: 3
+
+Input: nums = [2,2,1,1,1,2,2]
+Output: 2
+```
+
+---
+
+### 🔧 Approach: Use `unordered_map<int, int>` to Count Frequencies
+
+Steps:
+
+1. Loop through the array and store each number's count in a hash map
+2. As soon as a number's count becomes greater than `n / 2`, return it immediately
+
+---
+
+### ✅ C++ Code (with Comments)
+
+```cpp
+#include <unordered_map>
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        unordered_map<int, int> freq; // Step 1: Create frequency map
+
+        for (int num : nums) {
+            freq[num]++;             // Step 2: Count each number
+
+            if (freq[num] > nums.size() / 2) {
+                return num;          // Step 3: Return when count exceeds n / 2
+            }
+        }
+
+        return -1; // Not needed since majority always exists
+    }
+};
+```
+
+---
+
+### 🧠 Code Breakdown (Line-by-Line Table)
+
+| Code Line                          | What It Does                                   |
+| ---------------------------------- | ---------------------------------------------- |
+| `unordered_map<int, int> freq;`    | Create a map to store frequency of each number |
+| `for (int num : nums)`             | Loop through each number in the array          |
+| `freq[num]++;`                     | Count how many times each number appears       |
+| `if (freq[num] > nums.size() / 2)` | Check if this number appears more than n / 2   |
+| `return num;`                      | Return the majority element                    |
+
+---
+
+### 🔁 Dry Run: `nums = [2,2,1,1,1,2,2]`
+
+| Step | Current Num | freq\[num] | Action                |
+| ---- | ----------- | ---------- | --------------------- |
+| 1    | 2           | 1          | continue              |
+| 2    | 2           | 2          | continue              |
+| 3    | 1           | 1          | continue              |
+| 4    | 1           | 2          | continue              |
+| 5    | 1           | 3          | continue              |
+| 6    | 2           | 3          | continue              |
+| 7    | 2           | 4          | ✅ return 2 (majority) |
+
+---
+
+### 🏁 Final Notes:
+
+* This is a **hash map-based approach** to finding the majority element
+* Time Complexity: **O(n)**
+* Space Complexity: **O(n)**
+
+You're all set to commit this, bro! Let me know when you're ready for the next problem 🔥
