@@ -158,3 +158,44 @@ int main() {
 | `size()`  | Number of elements in the queue |
 
 ---
+Absolutely bro! ⚔️ Here’s your **LeetCode Warrior List** — handpicked problems based on what you’ve learned with `stack` and `queue` so far.
+
+---
+
+## 📚 **LeetCode Problems: Stack + Queue Based**
+
+### ✅ **Beginner – Core Stack Problems**
+
+| Problem                                                                         | Name                                     |
+| ------------------------------------------------------------------------------- | ---------------------------------------- |
+| [20](https://leetcode.com/problems/valid-parentheses/)                          | Valid Parentheses                        |
+| [155](https://leetcode.com/problems/min-stack/)                                 | Min Stack                                |
+| [682](https://leetcode.com/problems/baseball-game/)                             | Baseball Game                            |
+| [844](https://leetcode.com/problems/backspace-string-compare/)                  | Backspace String Compare                 |
+| [1047](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/) | Remove All Adjacent Duplicates In String |
+
+---
+
+### ✅ **Beginner – Core Queue Problems**
+
+| Problem                                                               | Name                            |
+| --------------------------------------------------------------------- | ------------------------------- |
+| [933](https://leetcode.com/problems/number-of-recent-calls/)          | Number of Recent Calls          |
+| [346](https://leetcode.com/problems/moving-average-from-data-stream/) | Moving Average from Data Stream |
+| [641](https://leetcode.com/problems/design-circular-deque/)           | Design Circular Deque           |
+| [225](https://leetcode.com/problems/implement-stack-using-queues/)    | Stack using Queues              |
+| [232](https://leetcode.com/problems/implement-queue-using-stacks/)    | Queue using Stacks              |
+
+---
+
+### 🔁 **Stack + Queue Combo Problems**
+
+| Problem                                                                | Name                             |
+| ---------------------------------------------------------------------- | -------------------------------- |
+| [239](https://leetcode.com/problems/sliding-window-maximum/)           | Sliding Window Maximum           |
+| [496](https://leetcode.com/problems/next-greater-element-i/)           | Next Greater Element I           |
+| [503](https://leetcode.com/problems/next-greater-element-ii/)          | Next Greater Element II          |
+| [150](https://leetcode.com/problems/evaluate-reverse-polish-notation/) | Evaluate Reverse Polish Notation |
+
+---
+
